@@ -82,3 +82,20 @@
 	background-repeat: no-repeat; /* Do not repeat the image */
 	background-size: cover;
 }
+
+.featuredItems {
+	display: flex;
+	width: 64%;
+	height: 20vh;
+	margin: auto;
+}
+.featuredPic {
+	width: 20%;
+}
+.bottomTitle {
+	margin: auto;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 1%;
+	font-family: Roboto, sans-serif;
+}

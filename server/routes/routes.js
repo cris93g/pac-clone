@@ -13,7 +13,8 @@ const {
 	getWomansSwim,
 	getWomansTops,
 	getCart,
-	addToCart
+	addToCart,
+	getItem
 } = require('../controllers/Controllers');
 
 module.exports = (app) => {
@@ -32,4 +33,5 @@ module.exports = (app) => {
 	app.get('/api/womens/tops', getWomansTops);
 	app.get('/api/cart', getCart);
 	app.post('/api/cart', addToCart);
+	app.post('/api/item', getItem);
 };

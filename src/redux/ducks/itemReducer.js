@@ -13,6 +13,22 @@ const GET_WOMENS_TOPS = 'GET_WOMENS_TOPS';
 const GET_DRESS = 'GET_DRESS';
 const GET_WOMENS_SWIM = 'GET_WOMENS_SWIM';
 const GET_WOMENS_ITEMS = 'GET_WOMENS_ITEMS';
+const GET_CART = 'GET_CART';
+const ADD_TO_CART = 'ADD_TO_CART';
+
+export function getCart() {
+	return {
+		type: GET_CART,
+		payload: axios.get('/api/cart')
+	};
+}
+
+export function addToCart(item) {
+	return {
+		type: ADD_TO_CART,
+		payload: axios.post('/api/cart', item)
+	};
+}
 
 export function getItems() {
 	return {
@@ -105,8 +121,10 @@ export function getWomansItems() {
 }
 
 const initialState = {
+	cart: [],
 	items: [],
-	isLoading: false
+	isLoading: false,
+	totalAmount: 0
 };
 
 export default function itemReducer(state = initialState, action) {
@@ -202,6 +220,21 @@ export default function itemReducer(state = initialState, action) {
 			return { ...state, isLoading: false, items: action.payload.data };
 		case `${GET_WOMENS_ITEMS}_REJECTED`:
 			return { ...state, isLoading: false };
+		case `${GET_CART}_FULFILLED`:
+			return {
+				...state,
+				cart: action.payload.data
+			};
+		case `${ADD_TO_CART}_FULFILLED`:
+			return {
+				...state,
+				cart: action.payload.data
+			};
+		case `${ADD_TO_CART}_REJECTED`:
+			return {
+				...state,
+				addToCartErrMsg: 'Failed To Add To Cart'
+			};
 		default:
 			return state;
 	}

@@ -5,9 +5,10 @@
 	margin-bottom: 1%;
 }
 .outerContainer {
-	width: 33%;
+	text-align: center;
+	width: 50%;
 	margin: auto;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Roboto, sans-serif;
 }
 .nav {
 	border-bottom: 1px solid rgb(136, 136, 136);
@@ -16,4 +17,9 @@
 	display: flex;
 	margin: auto;
 	justify-content: space-around;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }

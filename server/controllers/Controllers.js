@@ -27,7 +27,7 @@ module.exports = {
 	},
 	getMensItems(req, res) {
 		const db = req.app.get('db');
-		db.getMensItems().then((results) => res.status(200).json(rsults)).catch(console.log);
+		db.getMensItems().then((results) => res.status(200).json(results)).catch(console.log);
 	},
 	/******WOMANS ITEMS ******/
 	getWomansPants(req, res) {
@@ -51,7 +51,13 @@ module.exports = {
 	},
 	getWomansSwim(req, res) {
 		const db = req.app.get('db');
-		db.getWomansSwm().then((results) => res.status(200).json(results)).catch(console.log);
+		db.getWomansSwim().then((results) => res.status(200).json(results)).catch(console.log);
+	},
+
+	getItem(req, res) {
+		const { id } = req.body;
+		const db = req.app.get('db');
+		db.getItem([ id ]).then((response) => res.status(200).json(response)).catch(console.log);
 	},
 	/******  CART  ******/
 	addToCart(req, res) {
