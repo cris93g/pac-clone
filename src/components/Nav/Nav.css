@@ -23,3 +23,9 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+.topOfNav {
+	display: flex;
+	align-content: flex-end;
+	margin-left: 80%;
+}
