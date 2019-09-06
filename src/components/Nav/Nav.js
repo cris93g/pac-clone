@@ -26,8 +26,6 @@ class Nav extends Component {
 						<div>Women</div>
 						<div>Jeans</div>
 						<div>Swim</div>
-						<div>Home</div>
-						<div>Brands</div>
 					</div>
 				</div>
 			</div>
