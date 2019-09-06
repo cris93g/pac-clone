@@ -16,11 +16,11 @@ class GuyFeatures extends Component {
 	render() {
 		const { featured } = this.state;
 		console.log(featured);
-		const shuffled = featured ? featured.sort(() => 0.5 - Math.random()) : 'none';
+		// const shuffled = featured ? featured.sort(() => 0.5 - Math.random()) : 'none';
 		return (
 			<div className="featuredItems">
-				{shuffled ? (
-					shuffled.slice(-4).map((item) => {
+				{featured ? (
+					featured.slice(-4).map((item) => {
 						return (
 							<div>
 								<div>
