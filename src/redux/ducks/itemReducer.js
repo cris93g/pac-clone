@@ -15,6 +15,10 @@ const GET_WOMENS_SWIM = 'GET_WOMENS_SWIM';
 const GET_WOMENS_ITEMS = 'GET_WOMENS_ITEMS';
 const GET_CART = 'GET_CART';
 const ADD_TO_CART = 'ADD_TO_CART';
+const SET_TOTAL = 'SET_TOTAL';
+export function setTotal(total) {
+	return { type: SET_TOTAL, payload: total };
+}
 
 export function getCart() {
 	return {
@@ -124,6 +128,7 @@ const initialState = {
 	cart: [],
 	items: [],
 	isLoading: false,
+	addToCartErrMsg: '',
 	totalAmount: 0
 };
 
@@ -235,6 +240,8 @@ export default function itemReducer(state = initialState, action) {
 				...state,
 				addToCartErrMsg: 'Failed To Add To Cart'
 			};
+		case SET_TOTAL:
+			return { ...state, totalAmount: action.payload };
 		default:
 			return state;
 	}

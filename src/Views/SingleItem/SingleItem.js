@@ -54,9 +54,12 @@ class SingleItem extends Component {
 								<h2>{product.name}</h2>
 								<h3>{product.price}</h3>
 								<p>{product.description}</p>
-								<button onClick={() => addToCart(product)} className="cartButton">
-									ADD TO BAG
-								</button>
+								<Link to="/cart">
+									{' '}
+									<button onClick={() => addToCart(product)} className="cartButton">
+										ADD TO BAG
+									</button>
+								</Link>
 							</div>
 							<div />
 						</div>

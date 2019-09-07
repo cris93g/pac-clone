@@ -28,13 +28,12 @@ class SearchResults extends Component {
 	render() {
 		let { products } = this.state;
 
-		console.log(products);
 		return (
 			<div clasName="topdiv">
 				<div className="MenWrapper">
 					{products ? (
 						products.map((product) => {
-							if (product.name.toLowerCase().includes(this.props.match.params.id.toLowerCase())) {
+							if (product.brand.toLowerCase().includes(this.props.match.params.id.toLowerCase())) {
 								console.log(product);
 								return (
 									<div className="menCardWrapper">

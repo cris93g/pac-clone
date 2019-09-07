@@ -29,3 +29,7 @@ a {
 	align-content: flex-end;
 	margin-left: 80%;
 }
+
+.menu {
+	display: flex;
+}
