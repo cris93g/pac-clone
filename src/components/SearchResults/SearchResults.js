@@ -39,7 +39,9 @@ class SearchResults extends Component {
 								return (
 									<div className="menCardWrapper">
 										<div style={{ marginTop: '2%' }}>
-											<img style={{ width: '80%' }} src={product.picture} />
+											<Link to={`/item/${product.id}`}>
+												<img style={{ width: '80%' }} src={product.picture} />
+											</Link>
 											<p>{product.name}</p>
 											<p>{product.price}</p>
 										</div>

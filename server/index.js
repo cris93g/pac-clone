@@ -3,11 +3,13 @@ const express = require('express');
 const massive = require('massive');
 const { json } = require('body-parser');
 const cors = require('cors');
+// const path = require("path");
 const session = require('express-session');
 const passport = require('passport');
 const { getUser, strat, logout } = require(`${__dirname}/controllers/authCtrl/authCtrl`);
 
 const app = express();
+// app.use(express.static(__dirname+ '/../build'))
 const port = process.env.port || 3001;
 const routes = require('./routes/routes');
 app.use(cors());
@@ -70,6 +72,9 @@ app.use((req, res, next) => {
 app.get('/me', getUser);
 app.get('/logout', logout);
 routes(app);
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, ">./build/index.html"));
+//   });
 app.listen(port, () => {
 	console.log(`app is listening port ${port}`);
 });
